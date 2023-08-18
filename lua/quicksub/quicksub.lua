@@ -11,7 +11,7 @@ M.quicksub = function()
     vim.o.clipboard = old_clipboard
     vim.cmd('normal! u')
     vim.cmd('normal! <C-c>')
-    selected_text = selected_text:gsub("([%.%*%\\%/[%]%^%$|])", "\\%1")
+    selected_text = selected_text:gsub("([%.%*%\\%/[%]%^%$])", "\\%1")
     selected_text = selected_text:gsub("\n", "\\n")
     local range = vim.fn.input("Enter the range offset: ")
     local command_start = ':'
